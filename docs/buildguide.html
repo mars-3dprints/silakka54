@@ -23,11 +23,47 @@
         <div class="content">
           
 <h1>Build Guide</h1>
-          <h2>TBA</h2>
-        </div>
+<p>This is not a fully comprehensive guide to building a keyboard, but it should provide enough information. A more comprehensive guide is in the works.</p>
+
+<h3 id="bill-of-materials">Bill of materials</h3>
+<ul>
+<li><strong>54 x</strong> MX compatible key switches</li>
+<li><strong>54 x</strong> Kailh Hotswap Sockets</li>
+<li><strong>54 x</strong> 1N4148 Diodes</li>
+<li><strong>52 x</strong> 1u keycaps</li>
+<li><strong>2 x</strong> 1.5u keycap</li>
+<li><strong>2 x</strong> RP2040 Zero</li>
+<li><strong>2 x</strong> PJ320D audio sockets</li>
+<li><strong>1 x</strong> TRRS audio cable</li>
+<li><strong>20 x</strong> M2 Heat set inserts, length 2mm(OD3.2mm)</li><strong></strong>
+<li><strong>20 x</strong> M2 bolts, length 4mm</li>
+<li><strong>2 x</strong> PCB</li>
+<li><strong>2 x</strong> Bottom plate</li>
+<li><strong>2 x</strong> Top plate</li>
+</ul>
+
+<p>The PCB is designed so that it can be used on both sides. Use the images as a reference.</p>
+<p>The right side RP2040 needs to be flipped. <strong>Don't solder it too close to the PCB</strong>, leave a two-millimeter gap, the legs of the pin header should be long enough. There is no RESET pin on the Zero, so you need to have access to RESET and BOOT buttons if you want to change/upload the firmware.</p>
+
+<img src="img/guide_MCU.png" alt="Silakka54 split keyboard">
+
+<strong>It is recommended that the firmware be installed on the RP2040 Zero before assembling.</strong>
+
+<p>Double pressing the RESET button should put the Pico into bootloader mode if the firmware is installed. Refer <a href="firmware.html">firmware</a> section for more information.</p>
+<p>Solder the hotswap sockets, TRRS sockets, and RP2040's. Connect the two halves with the TRRS cable. <strong>Never</strong> connect or disconnect TRRS cable when keyboard is powered. This can lead to a short circuit.</p>
+
+<img src="img/guide_Reference.png" alt="Silakka54 split keyboard">
+
+<p>Next, attach the PCB to the plate with bolts. Then you can attach the switches to the top plate. Once all the switches are in place, make sure that the switch pins are not twisted or damaged. Press the top plate with the switches to the PCB.
+</p>
+
+<p>I recommend putting small rubber feet on the bottom plate. If you installed the silakka54_vial firmware, you can use the Vial software to test the functionality of the switches in the matrix tester.
+</p>
+
+</div>
         
         <div class="footer">
-            <p>Silakka54 keyboard is maintained by Squalius-cephalus</p>
+            <p>Silakka54 keyboard is maintained by <a href="https://github.com/Squalius-cephalus">Squalius-cephalus</a></p>
         </div>
         
         </body>

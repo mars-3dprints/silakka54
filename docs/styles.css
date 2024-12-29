@@ -46,7 +46,16 @@ navbar {
 }
 
 
+h3 {
+    color: #323047;
+  }
+  h2 {
+    color: #323047;
+  }
 
+  h1 {
+    color: #2d3768;
+  }
 img {
     width: 100%;
     height: 100%;
