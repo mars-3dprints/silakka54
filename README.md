@@ -14,9 +14,3 @@ You can find build guide [here.](https://github.com/Squalius-cephalus/silakka54/
 
 PCB design uses footprints from [ScottoKeebs](https://github.com/joe-scotto/scottokeebs/tree/main/Extras/ScottoKicad "ScottoKeebs") and [kbd library.](https://github.com/foostan/kbd "kbd library.")
 
-
-
-### TODO
-1. Clean up code
-2. Add RGB support
-3. Make default QMK keymap usable
