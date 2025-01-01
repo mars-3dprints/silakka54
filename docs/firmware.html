@@ -4,6 +4,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -13,11 +15,13 @@
 
     <body>
         <navbar>
-        <div class="topnav">
+        <div class="topnav" id="myTopnav">
           <a href="index.html">About</a>
           <a href="buildguide.html">Build Guide</a>
           <a href="firmware.html">Firmware</a>
           <a href="troubleshooting.html">Troubleshooting</a>
+          <a href="javascript:void(0);" class="icon" onclick="menubarResponsive()">
+            <i class="fa fa-bars"></i></a>
         </div>
     </navbar>
         <div class="content">
@@ -40,6 +44,7 @@
         <div class="footer">
             <p>Silakka54 keyboard is maintained by <a href="https://github.com/Squalius-cephalus">Squalius-cephalus</a></p>
         </div>
-        
+        <script src="main.js"></script>
+
         </body>
 </html>

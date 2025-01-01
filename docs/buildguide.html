@@ -3,6 +3,8 @@
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,17 +15,18 @@
 
     <body>
         <navbar>
-        <div class="topnav">
+        <div class="topnav" id="myTopnav">
           <a href="index.html">About</a>
           <a href="buildguide.html">Build Guide</a>
           <a href="firmware.html">Firmware</a>
           <a href="troubleshooting.html">Troubleshooting</a>
+          <a href="javascript:void(0);" class="icon" onclick="menubarResponsive()">
+            <i class="fa fa-bars"></i></a>
         </div>
     </navbar>
         <div class="content">
           
 <h1>Build Guide</h1>
-<p>This is not a fully comprehensive guide to building a keyboard, but it should provide enough information. A more comprehensive guide is in the works.</p>
 
 <h3 id="bill-of-materials">Bill of materials</h3>
 <ul>
@@ -42,29 +45,60 @@
 <li><strong>2 x</strong> Top plate</li>
 </ul>
 
-<p>The PCB is designed so that it can be used on both sides. Use the images as a reference.</p>
-<p>The right side RP2040 needs to be flipped. <strong>Don't solder it too close to the PCB</strong>, leave a two-millimeter gap, the legs of the pin header should be long enough. There is no RESET pin on the Zero, so you need to have access to RESET and BOOT buttons if you want to change/upload the firmware.</p>
+<p>Most of the components can be found on Aliexpress. PCB can be bought from a PCB manufacturer, usually there is a minimum order of 5 pcs. This is fine, because you can use the same PCB design on both sides of the keyboard.
 
-<img src="img/guide_MCU.png" alt="Silakka54 split keyboard">
-
-<strong>It is recommended that the firmware be installed on the RP2040 Zero before assembling.</strong>
-
-<p>Double pressing the RESET button should put the Pico into bootloader mode if the firmware is installed. Refer <a href="firmware.html">firmware</a> section for more information.</p>
-<p>Solder the hotswap sockets, TRRS sockets, and RP2040's. Connect the two halves with the TRRS cable. <strong>Never</strong> connect or disconnect TRRS cable when keyboard is powered on. Doing so may result in a short circuit.</p>
-
-<img src="img/guide_Reference.png" alt="Silakka54 split keyboard">
-
-<p>Next, attach the PCB to the plate with bolts. Then you can attach the switches to the top plate. Once all the switches are in place, make sure that the switch pins are not twisted or damaged. Press the top plate with the switches to the PCB.
+<p>    PCB thickness should be 1.6mm, 2 layers and lead free finish. You can find <a href="https://github.com/Squalius-cephalus/silakka54/tree/main/gerber">gerber</a> files from the repository.
+</p>
+<p>    Top and bottom plates can be printed from PLA. No supports is required.
 </p>
 
-<p>I recommend putting small rubber feet on the bottom plate. If you installed the silakka54_vial firmware, you can use the Vial software to test the functionality of the switches in the matrix tester.
+    Install firmware files to the RP2040 Zero microcontrollers. Hold down the BOOT button and connect microcontroller to the computer.
+    </p>
+
+    <img src="img/buildguide/MCU_flashing.png" alt="">
+<p>It should appear as USB mass storage. Drag and drop the silakka54_vial.uf2 file, and the drive should automatically disconnect.
+<p>    If you can't get the drive to show up, try a different USB cable, connect directly to the computer and make sure that USB cable can carry data.
+    
+    After you installed firmware to both microcontrollers, you can start the soldering process.</p>
+
+    <p>    Solder pin headers to the microcontroller. Second microcontroller needs to be rotated, so the buttons face down. 
+    </p>
+    
+
+    </p>
+<img src="img/buildguide/MCU_soldering.png" alt="">
+    <p>    Solder hotswap sockets to both PCBs. </p>
+    <img src="img/buildguide/Hotswap_sockets.png" alt="">
+    <p>Solder diodes, make sure to install those the right way round. Solder both microcontrollers. <strong>Don't solder those too close to the PCB,</strong> leave a two-millimeter gap, the legs of the pin header should be long enough.</p>
+    <img src="img/buildguide/Diode_gap.png" alt="">
+    <p>There is no RESET pin on the Zero, so you need to have access to RESET and BOOT buttons if you want to change/upload the firmware.</p>
+    <img src="img/buildguide/Tool.png" alt="">
+<p>Solder the audio connectors, those should be on top of the board.
 </p>
 
+<img src="img/buildguide/Plates.png" alt="">
+<p>Insert heat set inserts to the bottom plates using soldering iron. Temperature should be around 200°C. Fasten the PCBs to the base with bolts, insert key switches to the top plate and push the plate to the PCB.
+
+    
+    </p>
+    <p>Don't bend any pins! Plates should connect without too much force.</p>
+
+    <img src="img/buildguide/Done.png" alt="">
+    <p>Add keycaps, connect both halves with TRRS cable and connect the left side microcontroller to the computer. </p>
+
+    <img src="img/buildguide/TRRS.png" alt="">
+    <p>You need to use TRRS cable, TRS cable is missing one pin!
+
+        </p>
+        <p>        Test functionality of the keyboard using <a href="https://get.vial.today/">Vial</a>, with matrix tester you can test easily every key even if the key is mapped to nothing.
+        </p>
 </div>
+
         
         <div class="footer">
             <p>Silakka54 keyboard is maintained by <a href="https://github.com/Squalius-cephalus">Squalius-cephalus</a></p>
         </div>
-        
+        <script src="main.js"></script>
+
         </body>
 </html>
